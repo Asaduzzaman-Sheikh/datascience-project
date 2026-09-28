@@ -4,7 +4,7 @@ from typing import List
 
 def get_requirements(file_path: str) -> List[str]:
     """
-    
+    Read the requirements.txt file and return a list of requirements.
 
     Args:
         file_path (str): _description_
@@ -28,3 +28,4 @@ setup(
     packages=find_packages(),
     install_requires=get_requirements("requirements.txt")
 )
+

@@ -1,8 +1,8 @@
 import types
 import sys 
-import logging 
 
-from src.logger import LOG_FILE_PATH
+
+from src.logger import logging
 
 def error_message_details(error_message, error_details: types.ModuleType):
     _, _, exc_tb = error_details.exc_info()
