@@ -83,12 +83,12 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformer_object()
 
             # Seperate the input features and target variable from the training dataset
-            input_feature_train_df = train_df.drop(columns = ['math score'], axis = 1)
+            input_feature_train_df = train_df.drop(columns = ['math score'])
             target_feature_train_df = train_df['math score']
             
 
             # Seperate the input features and target variable from the testing dataset
-            input_feature_test_df = test_df.drop(columns = ['math score'], axis = 1)
+            input_feature_test_df = test_df.drop(columns = ['math score'])
             target_feature_test_df = test_df['math score']
 
             # Logging the successful separation of input features and target variable
@@ -123,3 +123,13 @@ class DataTransformation:
         except Exception as e:
             # Raise a custom exception if an error occurs
             raise CustomException(e, sys)
+
+if __name__ == '__main__':
+    # Example usage of the DataTransformation class
+    data_transformation = DataTransformation()
+
+    # Define the paths for the training and testing datasets
+    train_path = 'artifacts/train.csv'
+    test_path =  'artifacts/test.csv'
+    train_arr, test_arr, preprocessor_path = data_transformation.initiate_data_transformation(train_path, test_path)
+
